@@ -12,6 +12,7 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: inset 0 -8px 20px rgba(0, 0, 0, 0.25);
+    padding: 0 20px;
 }
 .nav-logo {
     color: white;
@@ -27,6 +28,7 @@ body {
     margin: 30px;
     padding: 10px;
     width: 600px;
+    max-width: 100%;
     height: 38px;
     display: flex;
     gap: 8px;
@@ -44,6 +46,8 @@ body {
 .search-bar {
     border-radius: 10px;
     width: 600px;
+    flex: 1;
+    min-width: 0;
 }
 .search-button {
     border-radius: 7px;
@@ -122,6 +126,12 @@ body {
    width: 100%;
    height: 600px;
 }
+.banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 .banner-text{
     position: absolute;
     top: 50%;
@@ -162,3 +172,58 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Responsive styles */
+@media (max-width: 900px) {
+    .nav-bar{
+        flex-direction: column;
+        height: auto;
+        align-items: stretch;
+        justify-content: center;
+        padding: 12px;
+    }
+    .nav-logo{
+        text-align: center;
+    }
+    .nav-search{
+        margin: 10px auto;
+        width: calc(100% - 40px);
+        padding: 6px;
+        height: 42px;
+    }
+    .search-bar{
+        width: auto;
+    }
+    .btn{
+        justify-content: center;
+        margin: 8px auto;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .banner{
+        height: 420px;
+    }
+    .banner-text{
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 36px;
+        padding: 0 12px;
+    }
+    .upper-case{
+        font-size: 18px;
+    }
+    .shop-btn{
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 420px) {
+    .nav-search{ margin: 8px 10px; }
+    .name{ font-size: 16px; }
+    .banner{ height: 320px; }
+    .banner-text{ font-size: 22px; }
+    .upper-case{ font-size: 14px; }
+    .line{ display: none; }
+    .all, .search-bar, .orders-btn, .orders, .Sign-In-btn{ font-size: 14px; }
+}
